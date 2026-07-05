@@ -13,19 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_16.app
-
       - name: Run SystemInfoKit unit tests
         run: swift test --package-path Packages/SystemInfoKit
 
-      - name: Build iOS app
+      - name: Build iOS app (simulator)
         run: |
           xcodebuild build \
             -project SystemInfo.xcodeproj \
             -scheme SystemInfo \
-            -destination 'generic/platform=iOS' \
-            CODE_SIGNING_ALLOWED=NO
+            -destination 'generic/platform=iOS Simulator'
 
       - name: Build macOS app
         run: |
