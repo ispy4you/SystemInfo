@@ -19,12 +19,13 @@ jobs:
       - name: Run SystemInfoKit unit tests
         run: swift test --package-path Packages/SystemInfoKit
 
-      - name: Build iOS app (simulator)
+      - name: Build iOS app
         run: |
           xcodebuild build \
             -project SystemInfo.xcodeproj \
             -scheme SystemInfo \
-            -destination 'generic/platform=iOS Simulator'
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO
 
       - name: Build macOS app
         run: |
