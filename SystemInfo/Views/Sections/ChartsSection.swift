@@ -1,4 +1,5 @@
 import SwiftUI
+import SystemInfoKit
 
 struct ChartsSection: View {
     @EnvironmentObject private var monitor: SystemMonitor

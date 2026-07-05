@@ -1,4 +1,5 @@
 import SwiftUI
+import SystemInfoKit
 
 struct SectionDetailView: View {
     let section: AppSection

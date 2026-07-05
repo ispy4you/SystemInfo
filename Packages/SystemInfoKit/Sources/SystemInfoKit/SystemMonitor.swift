@@ -2,21 +2,22 @@ import Combine
 import Foundation
 
 @MainActor
-final class SystemMonitor: ObservableObject {
-    @Published private(set) var cpuSeries = ChartSeries()
-    @Published private(set) var memorySeries = ChartSeries()
-    @Published private(set) var currentCPU: Double = 0
-    @Published private(set) var currentMemory: Double = 0
-    @Published private(set) var storage = StorageService.current()
-    @Published private(set) var power = PowerService.current()
-    @Published var lastRefreshed = Date()
+public final class SystemMonitor: ObservableObject {
+    @Published public private(set) var cpuSeries = ChartSeries()
+    @Published public private(set) var memorySeries = ChartSeries()
+    @Published public private(set) var currentCPU: Double = 0
+    @Published public private(set) var currentMemory: Double = 0
+    @Published public private(set) var storage = StorageService.current()
+    @Published public private(set) var power = PowerService.current()
+    @Published public var lastRefreshed = Date()
 
-    let network = NetworkService()
+    public let network = NetworkService()
 
     private var timer: Timer?
     private var cancellables = Set<AnyCancellable>()
+    private let cpuTracker = CPUUsageTracker()
 
-    init() {
+    public init() {
         refreshStaticData()
         startTimer()
     }
@@ -25,7 +26,7 @@ final class SystemMonitor: ObservableObject {
         timer?.invalidate()
     }
 
-    var updateInterval: UpdateInterval {
+    public var updateInterval: UpdateInterval {
         get { AppSettings.updateInterval }
         set {
             AppSettings.updateInterval = newValue
@@ -33,7 +34,7 @@ final class SystemMonitor: ObservableObject {
         }
     }
 
-    func refreshAll() {
+    public func refreshAll() {
         refreshStaticData()
         sampleMetrics()
         network.refresh()
@@ -64,7 +65,7 @@ final class SystemMonitor: ObservableObject {
     }
 
     private func sampleMetrics() {
-        let cpu = SystemSampler.cpuUsagePercent()
+        let cpu = cpuTracker.usagePercent()
         let memory = SystemSampler.memoryUsagePercent()
         currentCPU = cpu
         currentMemory = memory

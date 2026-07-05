@@ -1,4 +1,5 @@
 import SwiftUI
+import SystemInfoKit
 
 struct PowerSection: View {
     let power: PowerInfo

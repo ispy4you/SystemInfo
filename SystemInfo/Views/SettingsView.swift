@@ -1,4 +1,5 @@
 import SwiftUI
+import SystemInfoKit
 
 struct SettingsView: View {
     @EnvironmentObject private var monitor: SystemMonitor

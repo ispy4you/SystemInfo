@@ -1,4 +1,5 @@
 import SwiftUI
+import SystemInfoKit
 
 struct RootView: View {
     @EnvironmentObject private var monitor: SystemMonitor

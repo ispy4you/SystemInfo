@@ -5,8 +5,8 @@ import Foundation
 import UIKit
 #endif
 
-enum DeviceInfoService {
-    static var deviceName: String {
+public enum DeviceInfoService {
+    public static var deviceName: String {
         #if os(iOS)
         UIDevice.current.name
         #else
@@ -14,7 +14,7 @@ enum DeviceInfoService {
         #endif
     }
 
-    static var modelName: String {
+    public static var modelName: String {
         #if os(iOS)
         var systemInfo = utsname()
         uname(&systemInfo)
@@ -23,7 +23,7 @@ enum DeviceInfoService {
                 String(cString: $0)
             }
         }
-        return friendlyModelName(for: identifier) ?? UIDevice.current.model
+        return friendlyModelName(for: identifier) ?? identifier
         #else
         var size = 0
         sysctlbyname("hw.model", nil, &size, nil, 0)
@@ -33,12 +33,12 @@ enum DeviceInfoService {
         #endif
     }
 
-    static var osVersion: String {
+    public static var osVersion: String {
         let version = ProcessInfo.processInfo.operatingSystemVersion
         return "\(ProcessInfo.processInfo.operatingSystemVersionString) (\(version.majorVersion).\(version.minorVersion).\(version.patchVersion))"
     }
 
-    static var uptime: TimeInterval {
+    public static var uptime: TimeInterval {
         ProcessInfo.processInfo.systemUptime
     }
 

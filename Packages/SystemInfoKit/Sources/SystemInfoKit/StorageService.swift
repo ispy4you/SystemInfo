@@ -1,19 +1,19 @@
 import Foundation
 
-struct StorageInfo {
-    let total: Int64
-    let available: Int64
+public struct StorageInfo {
+    public let total: Int64
+    public let available: Int64
 
-    var used: Int64 { max(total - available, 0) }
+    public var used: Int64 { max(total - available, 0) }
 
-    var usedFraction: Double {
+    public var usedFraction: Double {
         guard total > 0 else { return 0 }
         return Double(used) / Double(total)
     }
 }
 
-enum StorageService {
-    static func current() -> StorageInfo? {
+public enum StorageService {
+    public static func current() -> StorageInfo? {
         let home = NSHomeDirectory()
         do {
             let values = try URL(fileURLWithPath: home)

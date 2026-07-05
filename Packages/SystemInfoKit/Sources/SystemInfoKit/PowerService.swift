@@ -4,15 +4,15 @@ import Foundation
 import UIKit
 #endif
 
-struct PowerInfo {
-    let levelPercent: Double?
-    let stateDescription: String
-    let isCharging: Bool
+public struct PowerInfo {
+    public let levelPercent: Double?
+    public let stateDescription: String
+    public let isCharging: Bool
 }
 
-enum PowerService {
+public enum PowerService {
     #if os(iOS)
-    static func current() -> PowerInfo {
+    public static func current() -> PowerInfo {
         let device = UIDevice.current
         device.isBatteryMonitoringEnabled = true
         let level = device.batteryLevel >= 0 ? Double(device.batteryLevel) * 100 : nil
@@ -35,7 +35,7 @@ enum PowerService {
         return PowerInfo(levelPercent: level, stateDescription: state, isCharging: charging)
     }
     #else
-    static func current() -> PowerInfo {
+    public static func current() -> PowerInfo {
         let lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
         let thermal = ProcessInfo.processInfo.thermalState
         let thermalText: String

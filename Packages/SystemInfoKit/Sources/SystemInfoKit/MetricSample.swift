@@ -1,13 +1,13 @@
 import Foundation
 
-struct MetricSample: Identifiable, Equatable {
-    let id = UUID()
-    let timestamp: Date
-    let value: Double
+public struct MetricSample: Identifiable, Equatable {
+    public let id = UUID()
+    public let timestamp: Date
+    public let value: Double
 }
 
-struct ChartSeries {
-    var samples: [MetricSample] = []
+public struct ChartSeries {
+    public var samples: [MetricSample] = []
     let maxCount: Int = 60
 
     mutating func append(_ value: Double, at date: Date = Date()) {
@@ -18,7 +18,7 @@ struct ChartSeries {
     }
 }
 
-enum AppSection: String, CaseIterable, Identifiable {
+public enum AppSection: String, CaseIterable, Identifiable {
     case overview = "Overview"
     case device = "Device"
     case power = "Power"
@@ -29,9 +29,9 @@ enum AppSection: String, CaseIterable, Identifiable {
     case network = "Network"
     case settings = "Settings"
 
-    var id: String { rawValue }
+    public var id: String { rawValue }
 
-    var icon: String {
+    public var icon: String {
         switch self {
         case .overview: return "square.grid.2x2"
         case .device: return "iphone"

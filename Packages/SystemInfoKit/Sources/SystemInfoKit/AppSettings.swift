@@ -1,13 +1,13 @@
 import Foundation
 
-enum UpdateInterval: Int, CaseIterable, Identifiable {
+public enum UpdateInterval: Int, CaseIterable, Identifiable {
     case one = 1
     case two = 2
     case five = 5
 
-    var id: Int { rawValue }
+    public var id: Int { rawValue }
 
-    var label: String {
+    public var label: String {
         switch self {
         case .one: return "1 second"
         case .two: return "2 seconds"
@@ -15,13 +15,13 @@ enum UpdateInterval: Int, CaseIterable, Identifiable {
         }
     }
 
-    var timeInterval: TimeInterval { TimeInterval(rawValue) }
+    public var timeInterval: TimeInterval { TimeInterval(rawValue) }
 }
 
-enum AppSettings {
+public enum AppSettings {
     static let updateIntervalKey = "updateIntervalSeconds"
 
-    static var updateInterval: UpdateInterval {
+    public static var updateInterval: UpdateInterval {
         get {
             let raw = UserDefaults.standard.integer(forKey: updateIntervalKey)
             return UpdateInterval(rawValue: raw) ?? .one

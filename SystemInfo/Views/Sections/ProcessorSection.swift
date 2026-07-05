@@ -1,4 +1,5 @@
 import SwiftUI
+import SystemInfoKit
 
 struct ProcessorSection: View {
     let cpuPercent: Double

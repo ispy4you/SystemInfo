@@ -1,4 +1,5 @@
 import SwiftUI
+import SystemInfoKit
 
 @main
 struct SystemInfoApp: App {

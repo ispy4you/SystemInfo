@@ -1,15 +1,15 @@
 import Foundation
 import Network
 
-final class NetworkService: ObservableObject {
-    @Published private(set) var connectionType = "Unknown"
-    @Published private(set) var localIP = "—"
-    @Published private(set) var isConnected = false
+public final class NetworkService: ObservableObject {
+    @Published public private(set) var connectionType = "Unknown"
+    @Published public private(set) var localIP = "—"
+    @Published public private(set) var isConnected = false
 
     private let monitor = NWPathMonitor()
     private let queue = DispatchQueue(label: "systeminfo.network.monitor")
 
-    init() {
+    public init() {
         monitor.pathUpdateHandler = { [weak self] path in
             DispatchQueue.main.async {
                 self?.isConnected = path.status == .satisfied

@@ -1,4 +1,5 @@
 import SwiftUI
+import SystemInfoKit
 
 #if canImport(UIKit)
 import UIKit

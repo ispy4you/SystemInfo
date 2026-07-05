@@ -7,15 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CA1CD3AE0439E5440AF72BB /* SystemInfoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3A3E336183EFFD1E62918652 /* SystemInfoKit */; };
 		B10000000000000000000001 /* SystemInfoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000001 /* SystemInfoApp.swift */; };
-		B10000000000000000000002 /* MetricSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000002 /* MetricSample.swift */; };
-		B10000000000000000000003 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000003 /* AppSettings.swift */; };
-		B10000000000000000000004 /* SystemSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000004 /* SystemSampler.swift */; };
-		B10000000000000000000005 /* DeviceInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000005 /* DeviceInfoService.swift */; };
-		B10000000000000000000006 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000006 /* StorageService.swift */; };
-		B10000000000000000000007 /* PowerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000007 /* PowerService.swift */; };
-		B10000000000000000000008 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000008 /* NetworkService.swift */; };
-		B10000000000000000000009 /* SystemMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000009 /* SystemMonitor.swift */; };
 		B1000000000000000000000A /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000000A /* Formatters.swift */; };
 		B1000000000000000000000B /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000000B /* Clipboard.swift */; };
 		B1000000000000000000000C /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000000C /* CardStyle.swift */; };
@@ -38,14 +31,6 @@
 /* Begin PBXFileReference section */
 		E10000000000000000000001 /* SystemInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SystemInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10000000000000000000001 /* SystemInfoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemInfoApp.swift; sourceTree = "<group>"; };
-		F10000000000000000000002 /* MetricSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricSample.swift; sourceTree = "<group>"; };
-		F10000000000000000000003 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
-		F10000000000000000000004 /* SystemSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSampler.swift; sourceTree = "<group>"; };
-		F10000000000000000000005 /* DeviceInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoService.swift; sourceTree = "<group>"; };
-		F10000000000000000000006 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
-		F10000000000000000000007 /* PowerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerService.swift; sourceTree = "<group>"; };
-		F10000000000000000000008 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		F10000000000000000000009 /* SystemMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMonitor.swift; sourceTree = "<group>"; };
 		F1000000000000000000000A /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		F1000000000000000000000B /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
 		F1000000000000000000000C /* CardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
@@ -70,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA1CD3AE0439E5440AF72BB /* SystemInfoKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,8 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				F10000000000000000000001 /* SystemInfoApp.swift */,
-				G10000000000000000000004 /* Models */,
-				G10000000000000000000005 /* Services */,
 				G10000000000000000000006 /* Utilities */,
 				G10000000000000000000007 /* Views */,
 				F1000000000000000000001A /* Assets.xcassets */,
@@ -103,28 +87,6 @@
 				E10000000000000000000001 /* SystemInfo.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		G10000000000000000000004 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F10000000000000000000002 /* MetricSample.swift */,
-				F10000000000000000000003 /* AppSettings.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		G10000000000000000000005 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				F10000000000000000000004 /* SystemSampler.swift */,
-				F10000000000000000000005 /* DeviceInfoService.swift */,
-				F10000000000000000000006 /* StorageService.swift */,
-				F10000000000000000000007 /* PowerService.swift */,
-				F10000000000000000000008 /* NetworkService.swift */,
-				F10000000000000000000009 /* SystemMonitor.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		G10000000000000000000006 /* Utilities */ = {
@@ -189,6 +151,9 @@
 			dependencies = (
 			);
 			name = SystemInfo;
+			packageProductDependencies = (
+				3A3E336183EFFD1E62918652 /* SystemInfoKit */,
+			);
 			productName = SystemInfo;
 			productReference = E10000000000000000000001 /* SystemInfo.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +182,9 @@
 				Base,
 			);
 			mainGroup = G10000000000000000000001;
+			packageReferences = (
+				832724651412AF12130B3173 /* XCLocalSwiftPackageReference "SystemInfoKit" */,
+			);
 			productRefGroup = G10000000000000000000003 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -243,14 +211,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B10000000000000000000001 /* SystemInfoApp.swift in Sources */,
-				B10000000000000000000002 /* MetricSample.swift in Sources */,
-				B10000000000000000000003 /* AppSettings.swift in Sources */,
-				B10000000000000000000004 /* SystemSampler.swift in Sources */,
-				B10000000000000000000005 /* DeviceInfoService.swift in Sources */,
-				B10000000000000000000006 /* StorageService.swift in Sources */,
-				B10000000000000000000007 /* PowerService.swift in Sources */,
-				B10000000000000000000008 /* NetworkService.swift in Sources */,
-				B10000000000000000000009 /* SystemMonitor.swift in Sources */,
 				B1000000000000000000000A /* Formatters.swift in Sources */,
 				B1000000000000000000000B /* Clipboard.swift in Sources */,
 				B1000000000000000000000C /* CardStyle.swift in Sources */,
@@ -401,6 +361,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		832724651412AF12130B3173 /* XCLocalSwiftPackageReference "SystemInfoKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/SystemInfoKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A3E336183EFFD1E62918652 /* SystemInfoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 832724651412AF12130B3173 /* XCLocalSwiftPackageReference "SystemInfoKit" */;
+			productName = SystemInfoKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = P10000000000000000000001 /* Project object */;
 }

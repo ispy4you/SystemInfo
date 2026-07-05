@@ -1,5 +1,6 @@
 import Charts
 import SwiftUI
+import SystemInfoKit
 
 struct MetricLineChart: View {
     let title: String

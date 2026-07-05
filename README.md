@@ -17,6 +17,14 @@ A native SwiftUI multiplatform app for **iOS 16+** and **macOS 13+** that displa
 - Xcode 15 or later
 - iOS 16+ / macOS 13+ SDKs
 
+## Tests
+
+All sampling/business logic lives in the local Swift package `Packages/SystemInfoKit` and is covered by unit tests there (`SystemSampler`, `StorageService`, `AppSettings`, `ChartSeries`, `CPUUsageTracker`). Run them directly with SwiftPM — no simulator, no Xcode project needed:
+
+```bash
+swift test --package-path Packages/SystemInfoKit
+```
+
 ## Open & Run
 
 1. Open `SystemInfo.xcodeproj` in Xcode.
@@ -38,14 +46,17 @@ cd ~/SystemInfo && git init
 
 ## Architecture
 
-| Layer | Responsibility |
-|-------|----------------|
-| `SystemMonitor` | Timer-driven sampling, published metrics |
-| `SystemSampler` | Mach `host_statistics` CPU/memory |
-| `DeviceInfoService` | Model, name, OS, uptime |
-| `PowerService` | `UIDevice` battery (iOS) / thermal (macOS) |
-| `StorageService` | `FileManager` volume capacity |
-| `NetworkService` | `NWPathMonitor` + `getifaddrs` |
+The engine (models + services) lives in the local Swift package **`Packages/SystemInfoKit`**, kept separate from the SwiftUI app so it can be unit-tested without a UI target and reused across app targets.
+
+| Layer | Location | Responsibility |
+|-------|----------|----------------|
+| `SystemMonitor` | SystemInfoKit | Timer-driven sampling, published metrics |
+| `SystemSampler` / `CPUUsageTracker` | SystemInfoKit | Mach `host_statistics` CPU/memory |
+| `DeviceInfoService` | SystemInfoKit | Model, name, OS, uptime |
+| `PowerService` | SystemInfoKit | `UIDevice` battery (iOS) / thermal (macOS) |
+| `StorageService` | SystemInfoKit | `FileManager` volume capacity |
+| `NetworkService` | SystemInfoKit | `NWPathMonitor` + `getifaddrs` |
+| `SystemInfo/Views/` | SystemInfo app | Full SwiftUI presentation (iOS + macOS), imports `SystemInfoKit` |
 
 ## Privacy
 

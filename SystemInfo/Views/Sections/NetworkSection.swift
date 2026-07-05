@@ -1,4 +1,5 @@
 import SwiftUI
+import SystemInfoKit
 
 struct NetworkSection: View {
     @ObservedObject var network: NetworkService
