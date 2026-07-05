@@ -32,3 +32,10 @@ jobs:
             -project SystemInfo.xcodeproj \
             -scheme SystemInfo \
             -destination 'platform=macOS'
+
+      - name: Build macOS menu bar app
+        run: |
+          xcodebuild build \
+            -project SystemInfo.xcodeproj \
+            -scheme SystemInfoMenuBar \
+            -destination 'platform=macOS'

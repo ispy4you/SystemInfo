@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9CA1CD3AE0439E5440AF72BB /* SystemInfoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3A3E336183EFFD1E62918652 /* SystemInfoKit */; };
+		11ACF2D7C733E802C204A7CE /* MenuBarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7195E5D036356E79EA18EF60 /* MenuBarContentView.swift */; };
+		29398751487283218CB83DA7 /* SystemInfoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 219D50B68CB8434CBF16672D /* SystemInfoKit */; };
+		A60E718BA1A43E4F0C778E24 /* SystemInfoKit in Frameworks */ = {isa = PBXBuildFile; productRef = EDB699628593E7F38F85558A /* SystemInfoKit */; };
 		B10000000000000000000001 /* SystemInfoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000001 /* SystemInfoApp.swift */; };
 		B1000000000000000000000A /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000000A /* Formatters.swift */; };
 		B1000000000000000000000B /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000000B /* Clipboard.swift */; };
@@ -26,9 +28,15 @@
 		B10000000000000000000018 /* SectionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000018 /* SectionDetailView.swift */; };
 		B10000000000000000000019 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000019 /* RootView.swift */; };
 		B1000000000000000000001A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1000000000000000000001A /* Assets.xcassets */; };
+		D291E516181FDC74AF108403 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9ED26144A38D12C0B981450 /* Cocoa.framework */; };
+		D866B90C1B9409E7D797D49C /* SystemInfoMenuBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A14DCB3BCB10051C26803B0 /* SystemInfoMenuBarApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19E452A700EB227408087188 /* SystemInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SystemInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A14DCB3BCB10051C26803B0 /* SystemInfoMenuBarApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SystemInfoMenuBarApp.swift; sourceTree = "<group>"; };
+		7195E5D036356E79EA18EF60 /* MenuBarContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuBarContentView.swift; sourceTree = "<group>"; };
+		94C83B8DF3CB2AACDA729EC8 /* SystemInfoMenuBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SystemInfoMenuBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10000000000000000000001 /* SystemInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SystemInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10000000000000000000001 /* SystemInfoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemInfoApp.swift; sourceTree = "<group>"; };
 		F1000000000000000000000A /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
@@ -48,25 +56,63 @@
 		F10000000000000000000018 /* SectionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailView.swift; sourceTree = "<group>"; };
 		F10000000000000000000019 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F1000000000000000000001A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9ED26144A38D12C0B981450 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9DFAD81496E2AC698B80B10E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D291E516181FDC74AF108403 /* Cocoa.framework in Frameworks */,
+				A60E718BA1A43E4F0C778E24 /* SystemInfoKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C10000000000000000000001 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CA1CD3AE0439E5440AF72BB /* SystemInfoKit in Frameworks */,
+				29398751487283218CB83DA7 /* SystemInfoKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		279914D61BB169440A910ED9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CFF71E4728704594EB6C84E /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3CFF71E4728704594EB6C84E /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				F9ED26144A38D12C0B981450 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		3DBC65CB0CA6D4A5B3B88F52 /* SystemInfoMenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				7195E5D036356E79EA18EF60 /* MenuBarContentView.swift */,
+				2A14DCB3BCB10051C26803B0 /* SystemInfoMenuBarApp.swift */,
+			);
+			name = SystemInfoMenuBar;
+			path = SystemInfoMenuBar;
+			sourceTree = "<group>";
+		};
 		G10000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
 				G10000000000000000000002 /* SystemInfo */,
 				G10000000000000000000003 /* Products */,
+				279914D61BB169440A910ED9 /* Frameworks */,
+				3DBC65CB0CA6D4A5B3B88F52 /* SystemInfoMenuBar */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				E10000000000000000000001 /* SystemInfo.app */,
+				19E452A700EB227408087188 /* SystemInfoTests.xctest */,
+				94C83B8DF3CB2AACDA729EC8 /* SystemInfoMenuBar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +186,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C900CDCDE9768228FE14C794 /* SystemInfoMenuBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0DF9CB9E11600DFF88D4C77 /* Build configuration list for PBXNativeTarget "SystemInfoMenuBar" */;
+			buildPhases = (
+				0793F7C8824772968E9C0708 /* Sources */,
+				9DFAD81496E2AC698B80B10E /* Frameworks */,
+				5277A1A4E00AF53BABDABAD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SystemInfoMenuBar;
+			packageProductDependencies = (
+				EDB699628593E7F38F85558A /* SystemInfoKit */,
+			);
+			productName = SystemInfoMenuBar;
+			productReference = 94C83B8DF3CB2AACDA729EC8 /* SystemInfoMenuBar.app */;
+			productType = "com.apple.product-type.application";
+		};
 		T10000000000000000000001 /* SystemInfo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = L10000000000000000000003 /* Build configuration list for PBXNativeTarget "SystemInfo" */;
@@ -152,7 +220,7 @@
 			);
 			name = SystemInfo;
 			packageProductDependencies = (
-				3A3E336183EFFD1E62918652 /* SystemInfoKit */,
+				219D50B68CB8434CBF16672D /* SystemInfoKit */,
 			);
 			productName = SystemInfo;
 			productReference = E10000000000000000000001 /* SystemInfo.app */;
@@ -183,18 +251,26 @@
 			);
 			mainGroup = G10000000000000000000001;
 			packageReferences = (
-				832724651412AF12130B3173 /* XCLocalSwiftPackageReference "SystemInfoKit" */,
+				481DD4217C6AB415D0DADD6A /* XCLocalSwiftPackageReference "SystemInfoKit" */,
 			);
 			productRefGroup = G10000000000000000000003 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				T10000000000000000000001 /* SystemInfo */,
+				C900CDCDE9768228FE14C794 /* SystemInfoMenuBar */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5277A1A4E00AF53BABDABAD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		R10000000000000000000001 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,6 +282,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0793F7C8824772968E9C0708 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11ACF2D7C733E802C204A7CE /* MenuBarContentView.swift in Sources */,
+				D866B90C1B9409E7D797D49C /* SystemInfoMenuBarApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		S10000000000000000000001 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,6 +318,58 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		01D3833D42F902717A557939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "System Info Menu Bar";
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.SystemInfoMenuBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		258DF0683051DA5A7187EE7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "System Info Menu Bar";
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.SystemInfoMenuBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		D10000000000000000000001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -342,6 +479,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C0DF9CB9E11600DFF88D4C77 /* Build configuration list for PBXNativeTarget "SystemInfoMenuBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				258DF0683051DA5A7187EE7B /* Release */,
+				01D3833D42F902717A557939 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		L10000000000000000000001 /* Build configuration list for PBXProject "SystemInfo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -363,16 +509,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		832724651412AF12130B3173 /* XCLocalSwiftPackageReference "SystemInfoKit" */ = {
+		481DD4217C6AB415D0DADD6A /* XCLocalSwiftPackageReference "SystemInfoKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/SystemInfoKit;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3A3E336183EFFD1E62918652 /* SystemInfoKit */ = {
+		219D50B68CB8434CBF16672D /* SystemInfoKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 832724651412AF12130B3173 /* XCLocalSwiftPackageReference "SystemInfoKit" */;
+			package = 481DD4217C6AB415D0DADD6A /* XCLocalSwiftPackageReference "SystemInfoKit" */;
+			productName = SystemInfoKit;
+		};
+		EDB699628593E7F38F85558A /* SystemInfoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 481DD4217C6AB415D0DADD6A /* XCLocalSwiftPackageReference "SystemInfoKit" */;
 			productName = SystemInfoKit;
 		};
 /* End XCSwiftPackageProductDependency section */

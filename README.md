@@ -13,6 +13,7 @@ A native SwiftUI multiplatform app for **iOS 16+** and **macOS 13+** that displa
 - Copy any value via button, context menu, or long press (iOS)
 - Adaptive layout: tabs on iPhone, sidebar + detail on Mac
 - Light and dark mode via system appearance
+- **SystemInfoMenuBar**: a lightweight macOS menu bar extra showing live CPU/memory/storage/battery, sharing the same engine as the main app
 
 ## Requirements
 
@@ -32,9 +33,11 @@ GitHub Actions (`.github/workflows/ci.yml`) runs this test suite plus iOS/macOS 
 ## Open & Run
 
 1. Open `SystemInfo.xcodeproj` in Xcode.
-2. Select the **SystemInfo** scheme.
+2. Select the **SystemInfo** scheme (main app) or **SystemInfoMenuBar** (macOS-only menu bar extra).
 3. Choose an iOS Simulator, iPhone, or **My Mac** destination.
 4. Press **Run** (⌘R).
+
+`SystemInfoMenuBar` runs as a menu bar–only agent (no Dock icon, no windows) and shows live CPU, memory, storage, and battery/thermal stats in a popover, with Refresh and Quit actions.
 
 If `git` failed during project creation because of the Xcode license, run:
 
@@ -61,6 +64,7 @@ The engine (models + services) lives in the local Swift package **`Packages/Syst
 | `StorageService` | SystemInfoKit | `FileManager` volume capacity |
 | `NetworkService` | SystemInfoKit | `NWPathMonitor` + `getifaddrs` |
 | `SystemInfo/Views/` | SystemInfo app | Full SwiftUI presentation (iOS + macOS), imports `SystemInfoKit` |
+| `SystemInfoMenuBar/` | SystemInfoMenuBar app | `MenuBarExtra` popover UI, imports the same `SystemInfoKit`, no Dock icon (`LSUIElement`) |
 
 ## Privacy
 
