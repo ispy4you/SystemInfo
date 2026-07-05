@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: macos-15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -switch /Applications/Xcode_16.app
+
+      - name: Run SystemInfoKit unit tests
+        run: swift test --package-path Packages/SystemInfoKit
+
+      - name: Build iOS app (simulator)
+        run: |
+          xcodebuild build \
+            -project SystemInfo.xcodeproj \
+            -scheme SystemInfo \
+            -destination 'generic/platform=iOS Simulator'
+
+      - name: Build macOS app
+        run: |
+          xcodebuild build \
+            -project SystemInfo.xcodeproj \
+            -scheme SystemInfo \
+            -destination 'platform=macOS'

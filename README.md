@@ -1,5 +1,7 @@
 # System Info
 
+[![CI](https://github.com/ispy4you/SystemInfo/actions/workflows/ci.yml/badge.svg)](https://github.com/ispy4you/SystemInfo/actions/workflows/ci.yml)
+
 A native SwiftUI multiplatform app for **iOS 16+** and **macOS 13+** that displays detailed system information with real-time CPU and memory charts.
 
 ## Features
@@ -24,6 +26,8 @@ All sampling/business logic lives in the local Swift package `Packages/SystemInf
 ```bash
 swift test --package-path Packages/SystemInfoKit
 ```
+
+GitHub Actions (`.github/workflows/ci.yml`) runs this test suite plus iOS/macOS app builds on every push and pull request to `main`.
 
 ## Open & Run
 
